@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>CSCN8020 DQN Assignment - Summary</title>
+<style>
+  @page {
+    size: letter;
+    margin: 1in;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Calibri", "Segoe UI", Arial, sans-serif;
+    color: #1a1a1a;
+    max-width: 7in;
+    margin: 0 auto;
+    line-height: 1.35;
+  }
+  h1 {
+    font-size: 20pt;
+    margin: 0 0 4pt 0;
+    color: #1f3864;
+  }
+  h2 {
+    font-size: 12pt;
+    margin: 14pt 0 4pt 0;
+    color: #1f3864;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2pt;
+  }
+  .subtitle {
+    font-size: 12pt;
+    color: #444;
+    margin-bottom: 10pt;
+  }
+  table.meta {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10.5pt;
+    margin-bottom: 8pt;
+  }
+  table.meta td {
+    padding: 2pt 0;
+    vertical-align: top;
+  }
+  table.meta td.label {
+    width: 1.6in;
+    font-weight: bold;
+    color: #1f3864;
+  }
+  p.summary {
+    font-size: 10.5pt;
+    text-align: justify;
+    margin: 4pt 0 0 0;
+  }
+  .links a {
+    word-break: break-all;
+    color: #1a1a1a;
+  }
+  footer {
+    margin-top: 16pt;
+    font-size: 9pt;
+    color: #777;
+  }
+</style>
+</head>
+<body>
+
+<h1>Deep Q-Network Control of the Unitree G1 Left Elbow</h1>
+<div class="subtitle">CSCN8020 &mdash; Reinforcement Learning | DQN Assignment</div>
+
+<table class="meta">
+  <tr><td class="label">Student</td><td>Liggia Cruz</td></tr>
+  <tr><td class="label">Student ID</td><td>9085905</td></tr>
+  <tr><td class="label">Instructor</td><td>Prof. Enrique Espinosa, Conestoga College</td></tr>
+</table>
+
+<h2>Project Summary</h2>
+<p class="summary">
+This project implements a student-written PyTorch Deep Q-Network (DQN) that
+controls the Unitree G1 left elbow joint in a fixed-base MuJoCo/Gymnasium
+environment, learning a three-action discrete policy (decrease, hold, or
+increase an internal PD-controller target) to reach goal angles sampled
+from [&minus;0.8, +0.8] rad. Two epsilon-decay configurations (0.995 and
+0.985) were trained headlessly on CPU with a shared replay buffer, target
+network, and Huber-loss Bellman update; the faster-decay configuration was
+selected for quicker convergence and lower reward variance. The selected
+DQN achieved 100% success (20/20) on the required four-goal, 20-episode
+greedy benchmark, matching the hand-written rule-based baseline while
+reaching the success streak in fewer steps on average.
+</p>
+
+<h2>Repository</h2>
+<table class="meta links">
+  <tr><td class="label">GitHub URL</td><td><a href="#">https://github.com/&lt;USRID&gt;/CSCN8020_Assignment3</a></td></tr>
+  <tr><td class="label">Clone URL</td><td><a href="#">https://github.com/&lt;USRID&gt;/CSCN8020_Assignment3.git</a></td></tr>
+</table>
+
+<footer>
+  Replace &lt;USRID&gt; above with the actual GitHub account ID once the
+  CSCN8020_Assignment3 repository has been created and pushed, before
+  exporting this page to PDF.
+</footer>
+
+</body>
+</html>
