@@ -4,12 +4,10 @@
 **Student:** Liggia Cruz
 **Student ID:** 9085905
 **Instructor:** Prof. Enrique Espinosa, Conestoga College
-**Repository:** https://github.com/`<USRID>`/CSCN8020_Assignment3
-**Clone URL:** https://github.com/`<USRID>`/CSCN8020_Assignment3.git
+**Repository:** https://github.com/liggiaelena/CSCN8020_Assignment3
+**Clone URL:** https://github.com/liggiaelena/CSCN8020_Assignment3.git
 **Validated run environment:** Python 3.12, WSL2 Ubuntu 24.04 (exact package versions pinned in `requirements-lock.txt`)
 
-> Replace `<USRID>` above with the actual GitHub account ID once the
-> `CSCN8020_Assignment3` repository is created and pushed.
 
 ## Project Summary
 

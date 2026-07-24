@@ -114,8 +114,10 @@ def main() -> None:
     )
     agent.load_checkpoint(args.checkpoint, map_location=device)
 
-    print("Starting in 3 seconds...")
-    time.sleep(3.0)
+    env.render()
+
+    print("Starting in 7 seconds...")
+    time.sleep(8.0)
 
     try:
         for goal_angle in args.goals:

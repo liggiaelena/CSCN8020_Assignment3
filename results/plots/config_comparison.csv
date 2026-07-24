@@ -1,3 +1,3 @@
 config,total_episodes,wall_clock_minutes,final_epsilon,mean_reward_final_20,success_rate_final_50
-Config A (decay=0.995),1200,2.626,0.0500,14.9959,1.0000
-Config B (decay=0.985),1200,2.088,0.0500,15.1060,1.0000
+Config A (decay=0.995),1200,6.557,0.0500,14.9959,1.0000
+Config B (decay=0.985),1200,5.996,0.0500,15.1060,1.0000
