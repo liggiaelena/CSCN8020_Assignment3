@@ -164,7 +164,8 @@ After completing the workshop, students should be able to:
 | `external/unitree_mujoco/` | Unmodified upstream Unitree MuJoCo repository (not edited, not committed -- see Setup). |
 | `models/` | Saved PyTorch checkpoints: `config_a_dqn.pt`, `config_b_dqn.pt`, `selected_dqn.pt`. |
 | `results/` | Training-metrics CSVs (`config_a/`, `config_b/`), evaluation CSVs, and `plots/` (all required figures and the config-comparison table). |
-| `report/DQN_Assignment_Report.md` | Full technical report (Section 11 of the assignment). |
+| `report/DQN_Assignment_Report.pdf` | Full technical report (Section 11 of the assignment). |
+| `report/brightspace_summary.html` | Source for the one-page Brightspace submission PDF (Section 16.6). |
 | `requirements.txt` / `requirements-lock.txt` | Top-level and fully pinned dependency lists. |
 | `.gitignore` | Excludes virtual environments, caches, and other non-source artifacts. |
 
