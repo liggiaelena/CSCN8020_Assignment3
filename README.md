@@ -250,6 +250,37 @@ report identical reward, episode length, and final error within each goal --
 this is the expected outcome of a fully deterministic evaluation protocol,
 not a data-generation error.
 
+### Reading the Evaluation CSVs
+
+`results/rule_based_evaluation.csv`, `results/config_a_dqn_evaluation.csv`,
+and `results/config_b_dqn_evaluation.csv` all share the same format: the
+required 20-episode benchmark (4 goal angles x 5 repeated episodes each),
+evaluated greedily (`epsilon = 0.0`). Example rows from
+`results/rule_based_evaluation.csv`:
+
+```
+goal_angle,episode_index,success,cumulative_reward,episode_length,final_absolute_error
+-0.8,0,True,10.521527701057494,27,0.012328092101017596
+-0.4,0,True,15.21405668091029,21,0.013217009087764853
+```
+
+| Column | Meaning |
+|---|---|
+| `goal_angle` | The target angle the elbow had to reach in that episode (one of the 4 required benchmark goals: -0.8, -0.4, +0.4, +0.8 rad). |
+| `episode_index` | Which repeat (0-4) of that same goal -- each goal is evaluated 5 times, per the assignment's required protocol. |
+| `success` | Whether the episode **terminated** (stayed within the 0.04 rad tolerance for 8 consecutive steps) rather than **truncated** (ran out of steps first). This is the column that shows the goal was actually reached. |
+| `cumulative_reward` | Total reward summed over the whole episode. |
+| `episode_length` | How many environment steps the episode took before ending. |
+| `final_absolute_error` | \|goal_angle - elbow_angle\| at the last step -- how close the elbow ended up to the target. This is the most direct number for "did it reach the goal": both policies land at roughly 0.01-0.02 rad of error, well inside the 0.04 rad success tolerance. |
+
+**How to see that the goal was reached, concretely:** in the example rows
+above, `success=True` and `final_absolute_error=0.0123` for the -0.8 rad
+goal -- the elbow ended the episode only 0.0123 rad away from -0.8, more
+than 3x tighter than the 0.04 rad tolerance required for success. Averaging
+`success` across all 20 rows in a file gives the success rate reported in
+"Results at a Glance" above (100% for both the rule-based policy and the
+selected DQN).
+
 Student-written Deep Q-Network components live under `src/dqn/`:
 
 | File | Contents |
